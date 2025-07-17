@@ -1,0 +1,43 @@
+{
+    "salads": [
+        {
+            "title": "Greek Salad",
+            "ingredients": "tomatoes, cucumbers, olives, feta",
+            "instructions": "Chop everything and mix.",
+            "image": "/static/images/greek_salad.jpg"
+        },
+        {
+            "title": "Watermelon and chilli salad",
+            "ingredients": "watermelon, rocket, chilli",
+            "instructions": "chop watermelon into chunks, and slice chilli thinly. mix"
+        }
+    ],
+    "mains": [
+        {
+            "title": "curry",
+            "ingredients": "peppers, coconut, vegetable mix",
+            "instructions": "cook",
+            "image": "/static/images/green_curry.jpg"
+        },
+        {
+            "title": "Dhal",
+            "ingredients": "lentils, vegetable mix, ginger, onion, garlic, chilli, olive oil",
+            "instructions": "1. cook the spices in olive oil\r\n2. add the vegetables\r\n3. add lentils",
+            "image": "/static/images/tarka_dhal.jpg"
+        },
+        {
+            "title": "mediterranean vegetables",
+            "ingredients": "onion, aubergine, tomato, courgette, garlic, olive oil, oregano, thyme, basil, feta-optional",
+            "instructions": "chop or slice vegetables, mix all apart tomatoes with oil and herbs, set on 180 in oven for 20 min. after that add the tomatoes, roast for another 10 min. serve with fresh basil and feta (optional)",
+            "image": "/static/images/roast_med_veg.jpg"
+        }
+    ],
+    "desserts": [
+        {
+            "title": "Summer Swiss Roll with Whipped Cream",
+            "ingredients": "sponge cake and whipped cream, sesonal fruits",
+            "instructions": "on the flat sponge ckae smear the whipped cream, layer the sesonal fruit on top , and start to roll, using the cling film. Let it set in the fridge for at least 4 hours, tightly rolled.",
+            "image": "/static/images/summer_swiss_roll.jpg"
+        }
+    ]
+}

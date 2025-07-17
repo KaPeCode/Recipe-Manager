@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<style>
+    body {
+        background-color: #d9e6f2;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1, h2 {
+        color: #274e72;
+        text-align: center;
+    }
+
+    header {
+        padding: 10px;
+        background-color: #7aa7d1;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #274e72;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+    }
+
+    button {
+        background-color: #b8c7b8;
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #a2b6a2;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #274e72;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<body>
+    <header>
+        <h1>Recipes Manager</h1>
+    </header>
+
+    <h1>Edit Recipe</h1>
+    <form method="POST" action="{{ url_for('edit_recipe', category=category, index=index) }}" enctype="multipart/form-data">
+        <label>Title: <input type="text" name="title" value="{{ recipe.title }}" required></label><br>
+        <label>Ingredients: <textarea name="ingredients">{{ recipe.ingredients }}</textarea></label><br>
+        <label>Instructions: <textarea name="instructions">{{ recipe.instructions }}</textarea></label><br>
+        <label>Replace Image: <input type="file" name="image" accept="image/*"></label><br>
+        <button type="submit">Update Recipe</button>
+    </form>
+    <a href="/">Back to recipes</a>
+</body>
+</html>
