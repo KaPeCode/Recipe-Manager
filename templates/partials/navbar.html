@@ -1,0 +1,30 @@
+<!-- Spinner -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+
+<!-- Navbar -->
+<div class="container-fluid bg-white sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
+            <a href="/" class="navbar-brand">
+                <img class="img-logo" src="{{ url_for('static', filename='images/KPSlogo.png') }}" alt="Logo">
+            </a>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="/add" class="nav-link">Add a new recipe</a></li>
+                    <li class="nav-item"><a href="{{ url_for('show_category', category='salads') }}" class="nav-link">Salads</a></li>
+                    <li class="nav-item"><a href="{{ url_for('show_category', category='mains') }}" class="nav-link">Mains</a></li>
+                    <li class="nav-item"><a href="{{ url_for('show_category', category='desserts') }}" class="nav-link">Desserts</a></li>
+                </ul>
+                <form class=" form-search d-flex ms-3" action="/search" method="GET">
+                    <input class="form-control me-2 flex-grow-1 w-full " type="search" name="query" placeholder="Search by title or ingredient">
+                    <button class="btn btn-light rounded-pill px-5text-primary zoomIn text" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>

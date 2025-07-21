@@ -1,0 +1,90 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #222;
+  }
+
+header h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #88b44e; /* your green theme color */
+}
+
+.add-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input[type="text"],
+form textarea,
+form select,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus,
+form input[type="file"]:focus {
+    border-color: #88b44e;
+    outline: none;
+    box-shadow: 0 0 6px #88b44eaa;
+}
+
+form button {
+    background-color: #88b44e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #6f8a3b;
+}
+
+a {
+    display: block;
+    max-width: 600px;
+    margin: 20px auto 0;
+    text-align: center;
+    color: #88b44e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}

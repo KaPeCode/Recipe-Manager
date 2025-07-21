@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Recipe</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
+{% extends "layout.html" %}
 
-<body>
-        <header>
-            <h1>Recipes Manager</h1>
-        </header>
+{% block content %}
     <h1>Add a Recipe</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <form class="add_form" method="POST" enctype="multipart/form-data">
         <label>Title: <input type="text" name="title" required></label><br>
         <label>Ingredients: <textarea name="ingredients"></textarea></label><br>
         <label>Instructions: <textarea name="instructions"></textarea></label><br>
@@ -18,13 +10,12 @@
             <select name="category">
                 <option value="salads">Salads</option>
                 <option value="mains">Mains</option>
-                <option value="desserts">Desserts</option>
+                <option value="deserts">Deserts</option>
             </select>
         </label><br>
         <label>Recipe Image: <input type="file" name="image" accept="image/*"></label><br>
         <button type="submit">Add</button>
     </form>
     <a href="/">Back to recipes</a>
-</body>
-</html>
 
+{% endblock %}

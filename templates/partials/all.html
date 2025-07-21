@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/header.html" %}
+
+    <!-- You can add more sections here -->
+
+<h1>All Recipes</h1>
+
+{% for category, items in recipes.items() %}
+<section class="recipe-category">
+    <div class="category-header">
+        <h2 id="{{ category }}">{{ category.title() }}</h2>
+    </div>
+    {% if items %}
+        <ul>
+            {% for recipe in items %}
+            <li>
+                <div class="card mb-3 mx-10" style="max-width: 60%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if recipe.image %}
+                                <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image rounded-start">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="{{ recipe.title }}" class="img-fluid rounded-start recipe-image">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <strong class="recipe-title">{{ recipe.title }}</strong><br>
+                                <div class="recipe-ingredients">
+                                    <strong>Ingredients:</strong><br>
+                                    {{ recipe.ingredients }}
+                                </div>
+                                <div class="recipe-instructions">
+                                    <strong>Instructions:</strong><br>
+                                    <span class="instructions-text">{{ recipe.instructions }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes yet in {{ category.title() }}.</p>
+    {% endif %}
+</section>
+{% endfor %}
+
+{% endblock %}

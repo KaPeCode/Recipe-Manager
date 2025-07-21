@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% include "partials/header.html" %}
+
+    {% for category, items in recipes.items() %}
+    <section class="recipe-category">
+        <div class="category-header">
+            <h2 id="{{ category }}">{{ category.title() }}</h2>
+        </div>
+        {% if items %}
+            <ul class="list-unstyled">
+                {% for recipe in items %}
+                <li>
+                    <div class="card mb-3 mx-auto" style="max-width: 60%;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if recipe.image %}
+                                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="img-fluid rounded-start recipe-image">
+                                {% else %}
+                                    <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="{{ recipe.title }}" class="img-fluid rounded-start recipe-image">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ recipe.title }}</h5>
+                                    <p class="card-text">
+                                        <strong>Ingredients:</strong><br>
+                                        {{ recipe.ingredients }}
+                                    </p>
+                                    <p class="card-text">
+                                        <strong>Instructions:</strong><br>
+                                        <span class="instructions-text">{{ recipe.instructions }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-center">No recipes yet in {{ category.title() }}.</p>
+        {% endif %}
+        <div class="text-center mt-4">
+            <button class="btn btn-light rounded-pill py-3 px-5 animated zoomIn back-to-top" onclick="scrollToTop()">Back to Top</button>
+            <a href="/">Back to recipes</a>
+        </div>
+    </section>
+    {% endfor %}
+{% endblock %}

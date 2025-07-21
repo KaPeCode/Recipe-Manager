@@ -45,6 +45,7 @@ def index():
     recipes = load_recipes()
     return render_template('index.html', recipes=recipes)
 
+
 @app.route('/add', methods=['GET', 'POST'])
 def add_recipe():
     if request.method == 'POST':
@@ -122,6 +123,24 @@ def edit_recipe(category, index):
         return redirect('/')
 
     return render_template('edit.html', recipe=recipe, category=category, index=index)
+
+@app.route('/category/<category>')
+def show_category(category):
+    data = load_recipes()
+    if category in data:
+        single_category = {category: data[category]}  # Wrap in dict for template loop
+        return render_template('category.html', recipes=single_category)
+    return redirect('/')
+    
+# @app.route('/all')
+# def show_all_recipes():
+#     data = load_recipes()
+#     return render_template('all.html', recipes=data)
+
+@app.route('/all')
+def show_all_recipes():
+    data = load_recipes()
+    return render_template('partials/all.html', recipes=data)
 
 
 if __name__ == '__main__':

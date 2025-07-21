@@ -1,0 +1,62 @@
+<div class="container-fluid product py-5 my-5">
+    <div class="container py-5">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Your Recipes</p>
+            <h1 class="display-6">"Welcome to Your Personal Recipe Book — Organize, Discover, and Cook with Ease!"</h1>
+            <p>Safely store your favorite recipes, browse by category, and keep your kitchen inspiration always at hand.</p>
+        </div>
+        <div class="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
+
+            <!-- All Recipes -->
+            <div class="d-block product-item rounded">
+                <a href="{{ url_for('show_all_recipes') }}">
+                    <img src="{{ url_for('static', filename='images/cookbook.jpg') }}" alt="cook book">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <div class="btn btn-light rounded-pill py-3 px-5 text-primary animated zoomIn">
+                            <h4>View All Recipes</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!-- Salads -->
+            <div>
+                <a href="{{ url_for('show_category', category='salads') }}" class="d-block product-item rounded">
+                    <img src="{{ url_for('static', filename='images/salad_bar.jpg') }}" alt="salad dishes">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <a href="{{ url_for('show_category', category='salads') }}" class="btn btn-light rounded-pill py-3 px-5 text-primary zoomIn">
+                            <h4>Salads</h4>
+                        </a>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mains -->
+            <div>
+                <a href="{{ url_for('show_category', category='mains') }}" class="d-block product-item rounded">
+                    <img src="{{ url_for('static', filename='images/mains.jpg') }}" alt="main dishes">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <a href="{{ url_for('show_category', category='mains') }}" class="btn btn-light rounded-pill py-3 px-5 text-primary zoomIn">
+                            <h4>Mains</h4>
+                        </a>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desserts -->
+            <div>
+                <a href="{{ url_for('show_category', category='desserts') }}" class="d-block product-item rounded">
+                    <img src="{{ url_for('static', filename='images/desserts.jpg') }}" alt="desserts">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <a href="{{ url_for('show_category', category='desserts') }}" class="btn btn-light rounded-pill py-3 px-5 text-primary zoomIn">
+                            <h4>Desserts</h4>
+                        </a>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <a href="/" class="btn btn-light rounded-pill py-3 px-5 text-primary zoomIn">Back to recipes</a>
+    </div>
+</div>
