@@ -5,7 +5,10 @@
     <!-- You can add more sections here -->
 
 <h1>All Recipes</h1>
-
+<form class=" form-search d-flex ms-3" action="/search" method="GET">
+    <input class="form-control me-2 flex-grow-1 w-full " type="search" name="query" placeholder="Search by title or ingredient">
+    <button class="btn btn-light rounded-pill px-5text-primary zoomIn text" type="submit">Search</button>
+</form>
 {% for category, items in recipes.items() %}
 <section class="recipe-category">
     <div class="category-header">
