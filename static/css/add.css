@@ -9,7 +9,10 @@ body {
     font-weight: 700;
     color: #222;
     text-align: center;
-  }
+    padding: 20px;
+
+    }
+ 
 
 header h1 {
     font-weight: 700;
